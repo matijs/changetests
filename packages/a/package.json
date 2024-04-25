@@ -1,0 +1,13 @@
+{
+  "name": "@matijs/a",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "github.com:matijs/changetests",
+    "directory": "packages/a"
+  },
+  "files": [
+    "*.css"
+  ]
+}
