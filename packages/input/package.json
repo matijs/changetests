@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "main": "./dist/index.js",
   "license": "EUPL-1.2",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matijs/changetests",
+    "directory": "packages/input"
+  },
   "files": [
     "dist"
   ],
