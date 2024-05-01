@@ -14,5 +14,3 @@ jobs:
       - run: |
           pnpm install
           pnpm build
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
