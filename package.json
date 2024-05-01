@@ -2,7 +2,8 @@
   "name": "changetests",
   "scripts": {
     "build": "pnpm run --recursive --if-present build",
-    "clean": "pnpm run --recursive --if-present clean"
+    "clean": "pnpm run --recursive --if-present clean",
+    "ci:publish": "changeset publish"
   },
   "license": "UNLICENSED",
   "devDependencies": {
