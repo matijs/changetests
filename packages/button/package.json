@@ -1,9 +1,8 @@
 {
-  "name": "@wip/button",
+  "name": "@matijs/button",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "license": "EUPL-1.2",
-  "repository": "https://github.com/matijs/changetests",
   "files": [
     "dist"
   ],
