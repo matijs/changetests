@@ -1,0 +1,35 @@
+{
+  "name": "@wip/textarea",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "license": "EUPL-1.2",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matijs/changetests",
+    "directory": "packages/textarea"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.1",
+    "react": "18.3.1",
+    "rimraf": "5.0.5",
+    "typescript": "5.4.5"
+  },
+  "peerDependencies": {
+    "react": "18.3.1"
+  },
+  "dependencies": {
+    "clsx": "2.1.1"
+  }
+}

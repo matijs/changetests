@@ -50,6 +50,25 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
 
+  packages/textarea:
+    dependencies:
+      clsx:
+        specifier: 2.1.1
+        version: 2.1.1
+    devDependencies:
+      '@types/react':
+        specifier: 18.3.1
+        version: 18.3.1
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      rimraf:
+        specifier: 5.0.5
+        version: 5.0.5
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+
 packages:
 
   /@babel/code-frame@7.24.2:
