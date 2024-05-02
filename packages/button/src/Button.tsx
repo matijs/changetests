@@ -6,12 +6,18 @@ interface Props
   appearance: "primary" | "secondary";
 }
 
-export const Button = ({ appearance, children, ...restProps }: Props) => (
+export const Button = ({
+  appearance,
+  children,
+  type = "submit",
+  ...restProps
+}: Props) => (
   <button
     className={clsx("button", {
       ["button--primary"]: appearance === "primary",
       ["button--secondary"]: appearance === "secondary",
     })}
+    type={type}
     {...restProps}
   >
     {children}
