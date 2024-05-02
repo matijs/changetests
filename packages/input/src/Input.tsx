@@ -6,9 +6,10 @@ interface Props
   appearance?: "error";
 }
 
-export const Input = ({ appearance, ...restProps }: Props) => (
+export const Input = ({ appearance, type = "text", ...restProps }: Props) => (
   <input
     className={clsx("input", { ["input--error"]: appearance === "error" })}
+    type={type}
     {...restProps}
   />
 );
