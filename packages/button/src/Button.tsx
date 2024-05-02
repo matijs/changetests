@@ -7,7 +7,7 @@ interface Props
 }
 
 export const Button = ({
-  appearance,
+  appearance = "secondary",
   children,
   type = "submit",
   ...restProps
