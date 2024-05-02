@@ -26,6 +26,8 @@ jobs:
           pnpm build
       - uses: changesets/action@v1
         with:
+          commit: "release: version packages"
+          title: "release: version packages"
           publish: "pnpm ci:publish"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
