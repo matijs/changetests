@@ -6,11 +6,13 @@ interface Props
     TextareaHTMLAttributes<HTMLTextAreaElement>,
     "className" | "style"
   > {
+  id: "string";
   appearance?: "error";
 }
 
-export const Button = ({ children, appearance, ...restProps }: Props) => (
+export const Button = ({ id, children, appearance, ...restProps }: Props) => (
   <textarea
+    id={id}
     className={clsx("textarea", {
       ["textarea--error"]: appearance === "error",
     })}
