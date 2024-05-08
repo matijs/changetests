@@ -69,6 +69,18 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
 
+  packages/label:
+    devDependencies:
+      '@types/react':
+        specifier: 18.3.1
+        version: 18.3.1
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+
   packages/textarea:
     dependencies:
       clsx:
