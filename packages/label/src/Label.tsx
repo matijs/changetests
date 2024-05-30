@@ -7,7 +7,7 @@ interface Props
     "className" | "htmlFor" | "style"
   > {
   // Encourage associating a label with a form element by making
-  // `html` mandatory
+  // `htmlFor` mandatory
   htmlFor: "string";
 }
 
