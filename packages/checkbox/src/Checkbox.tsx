@@ -3,7 +3,7 @@ import type { InputHTMLAttributes } from 'react';
 interface Props
   extends Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    'className' | 'style' | 'type'
+    'className' | 'style' | 'type' | 'id'
   > {
   id: 'string';
 }
