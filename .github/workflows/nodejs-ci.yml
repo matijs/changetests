@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: true
       - uses: actions/setup-node@v4
         with:
           cache: pnpm
           node-version-file: .node-version
           registry-url: "https://npm.pkg.github.com"
-      - run: |
-          pnpm install
-          pnpm build
+      - run: pnpm build
