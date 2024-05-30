@@ -1,5 +1,11 @@
 # @matijs/input
 
+## 1.0.1
+
+### Patch Changes
+
+- 6521e1e: Code formatting only
+
 ## 1.0.0
 
 ### Major Changes

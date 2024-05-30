@@ -1,5 +1,11 @@
 # @matijs/button
 
+## 0.2.2
+
+### Patch Changes
+
+- 6521e1e: Code formatting only
+
 ## 0.2.1
 
 ### Patch Changes
