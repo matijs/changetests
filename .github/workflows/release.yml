@@ -15,15 +15,11 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
+      - uses: actions/cache@v4
         with:
-          run_install: true
-      - uses: actions/setup-node@v4
-        with:
-          cache: pnpm
-          node-version-file: .node-version
-          registry-url: 'https://npm.pkg.github.com'
-      - run: pnpm build
+          path: packages/**/dist
+          key: ${{ github.sha }}
+          fail-on-cache-miss: true
       - uses: changesets/action@v1
         with:
           commit: 'release: version packages'
