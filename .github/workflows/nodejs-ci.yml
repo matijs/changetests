@@ -20,7 +20,3 @@ jobs:
           node-version-file: .node-version
           registry-url: 'https://npm.pkg.github.com'
       - run: pnpm build
-      - uses: actions/cache@v4
-        with:
-          path: packages/**/dist
-          key: ${{ github.sha }}
