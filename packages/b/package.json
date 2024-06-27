@@ -2,6 +2,9 @@
   "name": "@matijs/b",
   "version": "1.0.0",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "@matijs/a": "workspace:*"
   }
