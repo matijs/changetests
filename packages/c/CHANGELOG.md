@@ -1,5 +1,16 @@
 # @matijs/c
 
+## 1.1.0
+
+### Minor Changes
+
+- 9ac6d40: Now with a publishConfig
+
+### Patch Changes
+
+- Updated dependencies [9ac6d40]
+  - @matijs/b@1.1.0
+
 ## 1.0.0
 
 ### Major Changes
