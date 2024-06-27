@@ -8,5 +8,5 @@
   "dependencies": {
     "@matijs/a": "workspace:*"
   },
-  "files": "*.css"
+  "files": ["*.css"]
 }

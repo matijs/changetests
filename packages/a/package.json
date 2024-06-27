@@ -5,5 +5,5 @@
   "publishConfig": {
     "@matijs:registry": "https://npm.pkg.github.com"
   },
-  "files": "*.css"
+  "files": ["*.css"]
 }
