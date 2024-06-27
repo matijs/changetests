@@ -1,5 +1,11 @@
 # @matijs/c
 
+## 1.1.0
+
+### Minor Changes
+
+- 8b8a5fb: Add a background-color to c
+
 ## 1.0.1
 
 ### Patch Changes
