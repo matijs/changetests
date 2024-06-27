@@ -1,5 +1,12 @@
 # @matijs/c
 
+## 1.1.1
+
+### Patch Changes
+
+- Updated dependencies [cbc70b0]
+  - @matijs/b@2.0.0
+
 ## 1.1.0
 
 ### Minor Changes

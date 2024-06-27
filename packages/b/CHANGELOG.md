@@ -1,5 +1,11 @@
 # @matijs/b
 
+## 2.0.0
+
+### Major Changes
+
+- cbc70b0: Remove root:white
+
 ## 1.0.1
 
 ### Patch Changes
