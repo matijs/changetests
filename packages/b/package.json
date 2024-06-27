@@ -1,0 +1,8 @@
+{
+  "name": "@matijs/b",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@matijs/a": "workspace:*"
+  }
+}
