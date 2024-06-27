@@ -1,5 +1,12 @@
 # @matijs/b
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [ce29985]
+  - @matijs/a@1.1.0
+
 ## 2.0.0
 
 ### Major Changes
