@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@matijs:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "@matijs/a": "workspace:*"
