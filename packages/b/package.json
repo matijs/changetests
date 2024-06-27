@@ -7,5 +7,6 @@
   },
   "dependencies": {
     "@matijs/a": "workspace:*"
-  }
+  },
+  "files": "*.css"
 }
