@@ -1,7 +1,12 @@
 {
   "name": "@matijs/c",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matijs/changetests",
+    "directory": "packages/c"
+  },
   "publishConfig": {
     "@matijs:registry": "https://npm.pkg.github.com"
   },
