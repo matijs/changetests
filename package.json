@@ -3,7 +3,7 @@
   "scripts": {
     "build": "pnpm run --recursive --if-present build",
     "clean": "pnpm run --recursive --if-present clean",
-    "ci:publish": "changeset publish",
+    "ci:publish": "changeset publish --no-git-tag",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write ."
   },
