@@ -29,6 +29,12 @@ importers:
         specifier: workspace:*
         version: link:../b
 
+  packages/d:
+    dependencies:
+      '@matijs/b':
+        specifier: workspace:*
+        version: link:../b
+
 packages:
 
   '@babel/code-frame@7.24.2':

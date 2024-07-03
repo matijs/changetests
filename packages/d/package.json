@@ -1,0 +1,20 @@
+{
+  "name": "@matijs/d",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matijs/changetests",
+    "directory": "packages/d"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@matijs/b": "workspace:*"
+  },
+  "files": [
+    "*.css"
+  ]
+}
