@@ -1,5 +1,12 @@
 # @matijs/b
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [4c0b4de]
+  - @matijs/a@1.1.0
+
 ## 0.1.0
 
 ### Minor Changes
