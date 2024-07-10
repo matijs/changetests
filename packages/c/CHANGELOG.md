@@ -1,5 +1,11 @@
 # @matijs/c
 
+## 0.1.1
+
+### Patch Changes
+
+- @matijs/b@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
