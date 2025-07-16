@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 concurrency:
   group: ${{ github.ref }}
@@ -22,6 +23,17 @@ jobs:
           private-key: ${{ secrets.PRIVATE_KEY }}
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - run: |
+          if [ -f "${HOME}/.netrc" ]; then
+            echo ".netrc exists"
+          else
+            echo ".netrc does not exist"
+          fi
+
+      - run: gh auth status
 
       - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
         with:
@@ -34,11 +46,3 @@ jobs:
 
       - run: pnpm build
 
-      - uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba # v1.5.3
-        with:
-          setupGitUser: false
-          title: Update changelogs
-          commit: Update changelogs
-          commitMode: github-api
-        env:
-          GITHUB_TOKEN: ${{ steps.create-github-app-token.outputs.token }}
