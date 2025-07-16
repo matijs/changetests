@@ -10,7 +10,7 @@
     "prettier:fix": "prettier --write ."
   },
   "devDependencies": {
-    "@changesets/cli": "2.27.1",
-    "prettier": "3.2.5"
+    "@changesets/cli": "2.29.5",
+    "prettier": "3.6.2"
   }
 }
