@@ -40,5 +40,10 @@ jobs:
       - run: pnpm build
 
       - uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba # v1.5.3
+        with:
+          setupGitUser: false
+          title: Update changelogs
+          commit: Update changelogs
+          commitMode: github-api
         env:
           GITHUB_TOKEN: ${{ steps.create-github-app-token.outputs.token }}
