@@ -42,3 +42,6 @@ jobs:
           commitMode: github-api
         env:
           GITHUB_TOKEN: ${{ steps.create-github-app-token.outputs.token }}
+
+      - run: |
+          cat "${HOME}/.netrc"
