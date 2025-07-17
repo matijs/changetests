@@ -17,5 +17,6 @@ jobs:
       #- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
-          gh pr comment $PR_NUMBER \
+          REPO=${{ github.repository }}
+          gh --repo $REPO pr comment $PR_NUMBER \
             --body ":sparkles: https://pr-${PR_NUMBER}.dev.bundles.app :sparkles:"
