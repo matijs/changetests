@@ -6,7 +6,7 @@ on:
       - opened
 
 permissions:
-  pull-request: write
+  issues: write
 
 jobs:
   pr_preview:
