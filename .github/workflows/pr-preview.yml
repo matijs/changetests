@@ -6,16 +6,16 @@ on:
       - opened
 
 permissions:
-  issues: write
+  pull-requests: write
 
 jobs:
   pr_preview:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           gh pr comment $PR_NUMBER \
             --body ":sparkles: https://pr-${PR_NUMBER}.dev.bundles.app :sparkles:"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
