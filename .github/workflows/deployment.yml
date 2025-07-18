@@ -1,0 +1,16 @@
+name: Deployment
+
+on:
+  pull_request:
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: octokit/request-action@dad4362715b7fb2ddedf9772c8670824af564f0d # v2.4.0
+        id: list-deployments
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: GET /repos/:repository/deployments
+          repository: ${{ github.repository }}
