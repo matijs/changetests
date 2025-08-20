@@ -17,6 +17,8 @@ jobs:
   chained:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    env:
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
 
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -27,4 +29,20 @@ jobs:
         env:
           ACTOR: ${{ github.actor }}
       - run: ls -al
+      - run: |
+          gh api \
+            --method POST \
+            --header "Accept: application/vnd.github+json" \
+            --field name="custom check" \
+            --field head_sha="${SHA}" \
+            --field status="in_progress"
+      - run: |
+          gh api \
+            --method POST \
+            --header "Accept: application/vnd.github+json" \
+            --field name="custom check" \
+            --field head_sha="${SHA}" \
+            --field status="completed" \
+            --field conclusion="success"
+
 
