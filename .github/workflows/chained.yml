@@ -34,7 +34,7 @@ jobs:
           gh api --method POST \
             repos/:owner/:repo/check-runs \
             --header "Accept: application/vnd.github+json" \
-            --field name="My Custom Check" \
+            --field name="${{ github.workflow }}" \
             --field head_sha="${HEAD_SHA}" \
             --field status="in_progress"
       - name: Complete check
@@ -42,7 +42,7 @@ jobs:
           gh api --method POST \
             repos/:owner/:repo/check-runs \
             --header "Accept: application/vnd.github+json" \
-            --field name="My Custom Check" \
+            --field name="${{ github.workflow }}" \
             --field head_sha="${HEAD_SHA}" \
             --field status="completed" \
             --field conclusion="success"
