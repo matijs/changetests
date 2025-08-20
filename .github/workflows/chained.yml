@@ -2,8 +2,6 @@ name: chained
 
 on:
   workflow_run:
-    branches:
-      - main
     workflows:
       - ci
     types:
