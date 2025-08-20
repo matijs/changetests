@@ -37,6 +37,8 @@ jobs:
             --field name="${{ github.workflow }}" \
             --field head_sha="${HEAD_SHA}" \
             --field status="in_progress"
+      - name: Wait for it
+        run: sleep 10
       - name: Complete check
         run: |
           gh api --method POST \
