@@ -31,18 +31,18 @@ jobs:
           ACTOR: ${{ github.actor }}
       - run: ls -al
       - run: |
-        gh api --method POST \
-          repos/:owner/:repo/check-runs \
-          --header "Accept: application/vnd.github+json" \
-          --field name="My Custom Check" \
-          --header head_sha="${HEAD_SHA}" \
-          --field status="in_progress"
+          gh api --method POST \
+            repos/:owner/:repo/check-runs \
+            --header "Accept: application/vnd.github+json" \
+            --field name="My Custom Check" \
+            --header head_sha="${HEAD_SHA}" \
+            --field status="in_progress"
       - run: |
-        gh api --method POST \
-          repos/:owner/:repo/check-runs \
-          --header "Accept: application/vnd.github+json" \
-          --field name="My Custom Check" \
-          --header head_sha="${HEAD_SHA}" \
-          --field status="completed" \
-          --field conclusion="success"
+          gh api --method POST \
+            repos/:owner/:repo/check-runs \
+            --header "Accept: application/vnd.github+json" \
+            --field name="My Custom Check" \
+            --header head_sha="${HEAD_SHA}" \
+            --field status="completed" \
+            --field conclusion="success"
 
