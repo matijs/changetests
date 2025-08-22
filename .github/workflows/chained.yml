@@ -49,7 +49,7 @@ jobs:
       - name: Complete check
         if: ${{ always() }}
         run: |
-          gh api --method POST \
+          gh api --method PATCH \
             repos/:owner/:repo/check-runs/${{ steps.setup-check.outputs.CHECK_RUN_ID }} \
             --header "Accept: application/vnd.github+json" \
             --field name="${{ github.job }}" \
