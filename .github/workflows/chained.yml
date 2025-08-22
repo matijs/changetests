@@ -32,7 +32,7 @@ jobs:
       - name: Setup check
         id: setup-check
         run: |
-          CHECK_RUN_ID=(
+          CHECK_RUN_ID=$(
             gh api --method POST \
               repos/:owner/:repo/check-runs \
               --header "Accept: application/vnd.github+json" \
