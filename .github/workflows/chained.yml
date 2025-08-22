@@ -49,6 +49,12 @@ jobs:
       - name: Complete check
         if: ${{ always() }}
         run: |
+          if [ ${{ job.status }} -eq "success" ]; then
+            summary="No changeset needed"
+          else
+            summary="Changeset needed but missing"
+          fi
+
           gh api --method PATCH \
             repos/:owner/:repo/check-runs/${{ steps.setup-check.outputs.CHECK_RUN_ID }} \
             --header "Accept: application/vnd.github+json" \
@@ -56,4 +62,6 @@ jobs:
             --field head_sha="${HEAD_SHA}" \
             --field status="completed" \
             --field conclusion=${{ job.status }} \
-            --field details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            --field details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --field output[title]="Een titel" \
+            --field output[summary]="${summary}"
