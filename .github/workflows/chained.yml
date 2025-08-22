@@ -49,7 +49,7 @@ jobs:
       - name: Complete check
         if: ${{ always() }}
         run: |
-          if [ ${{ job.status }} -eq "success" ]; then
+          if [ "${{ job.status }}" -eq "success" ]; then
             summary="No changeset needed"
           else
             summary="Changeset needed but missing"
