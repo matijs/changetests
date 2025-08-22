@@ -51,7 +51,7 @@ jobs:
           gh api --method POST \
             repos/:owner/:repo/check-runs/${{ steps.setup-check.outputs.CHECK_RUN_ID }} \
             --header "Accept: application/vnd.github+json" \
-            --field name="${{ github.workflow }}" \
+            --field name="${{ github.job }}" \
             --field head_sha="${HEAD_SHA}" \
             --field status="completed" \
             --field conclusion=${{ job.status }}
