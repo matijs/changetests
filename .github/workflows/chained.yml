@@ -38,7 +38,8 @@ jobs:
               --header "Accept: application/vnd.github+json" \
               --field name="${{ github.workflow }}" \
               --field head_sha="${HEAD_SHA}" \
-              --field status="in_progress"
+              --field status="in_progress" \
+              --jq ".id"
           )
           echo "CHECK_RUN_ID=${CHECK_RUN_ID}" | tee -a "${GITHUB_OUTPUT}"
       - name: Wait for it
