@@ -49,10 +49,10 @@ jobs:
       - name: Complete check
         if: ${{ always() }}
         run: |
-          if [ "${{ job.status }}" -eq "success" ]; then
-            summary="No changeset needed"
+          if [ "${{ job.status }}" -eq "failure" ]; then
+            summary=":x: changeset needed but not found."
           else
-            summary="Changeset needed but missing"
+            summary=":heavy_check_mark: changeset found or not needed."
           fi
 
           gh api --method PATCH \
@@ -62,6 +62,6 @@ jobs:
             --field head_sha="${HEAD_SHA}" \
             --field status="completed" \
             --field conclusion=${{ job.status }} \
-            --field details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-            --field output[title]="Een titel" \
-            --field output[summary]="${summary}"
+            --field output[title]="${{ job.status }}" \
+            --field output[summary]="${summary}" \
+            --field details_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
