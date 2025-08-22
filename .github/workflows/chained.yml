@@ -14,7 +14,7 @@ permissions:
 jobs:
   chained:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     env:
       HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
