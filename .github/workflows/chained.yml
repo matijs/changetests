@@ -26,8 +26,11 @@ jobs:
           repository: ${{ github.event.workflow_run.head_repository.full_name }}
           ref: ${{ github.event.workflow_run.head_sha }}
       - name: Log
+        env:
+          JOB: ${{ toJson(job) }}
         run: |
           jq -n "${GITHUB_CONTEXT}"
+          jq -n "${JOB}"
           ls -al
       - name: Setup check
         run: |
