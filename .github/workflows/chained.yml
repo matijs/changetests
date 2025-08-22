@@ -26,29 +26,33 @@ jobs:
           repository: ${{ github.event.workflow_run.head_repository.full_name }}
           ref: ${{ github.event.workflow_run.head_sha }}
       - name: Log
-        env:
-          JOB: ${{ toJson(job) }}
         run: |
           jq -n "${GITHUB_CONTEXT}"
-          jq -n "${JOB}"
           ls -al
       - name: Setup check
+        id: setup-check
         run: |
-          gh api --method POST \
-            repos/:owner/:repo/check-runs \
-            --header "Accept: application/vnd.github+json" \
-            --field name="${{ github.workflow }}" \
-            --field head_sha="${HEAD_SHA}" \
-            --field status="in_progress"
+          CHECK_RUN_ID=(
+            gh api --method POST \
+              repos/:owner/:repo/check-runs \
+              --header "Accept: application/vnd.github+json" \
+              --field name="${{ github.workflow }}" \
+              --field head_sha="${HEAD_SHA}" \
+              --field status="in_progress"
+          )
+          echo "CHECK_RUN_ID=${CHECK_RUN_ID}" | tee -a "${GITHUB_OUTPUT}"
       - name: Wait for it
-        run: sleep 10
+        run: |
+          sleep 10
+          exit $((RANDOM % 2))
       - name: Complete check
+        if: ${{ always() }}
         run: |
           gh api --method POST \
-            repos/:owner/:repo/check-runs \
+            repos/:owner/:repo/check-runs/${{ steps.setup-check.outputs.CHECK_RUN_ID }} \
             --header "Accept: application/vnd.github+json" \
             --field name="${{ github.workflow }}" \
             --field head_sha="${HEAD_SHA}" \
             --field status="completed" \
-            --field conclusion="success"
+            --field conclusion=${{ job.status }}
 
