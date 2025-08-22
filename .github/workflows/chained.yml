@@ -56,4 +56,4 @@ jobs:
             --field head_sha="${HEAD_SHA}" \
             --field status="completed" \
             --field conclusion=${{ job.status }} \
-            --field details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            --field details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
