@@ -64,4 +64,4 @@ jobs:
             --field conclusion=${{ job.status }} \
             --field output[title]="${{ job.status }}" \
             --field output[summary]="${summary}" \
-            --field details_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            --field details_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ github.job }}"
